@@ -1,7 +1,7 @@
 use leptos::prelude::*;
 use leptos_router::components::A;
 
-use super::ui::{Badge, BadgeVariant, Button, ButtonVariant};
+use super::ui::{Button, ButtonVariant};
 
 #[component]
 pub fn NavBar(is_dark: RwSignal<bool>) -> impl IntoView {
@@ -15,7 +15,6 @@ pub fn NavBar(is_dark: RwSignal<bool>) -> impl IntoView {
                 <A href="/" attr:class="no-underline text-[var(--color-text-primary)] text-sm font-semibold tracking-tight">
                     "Rust CF Workers"
                 </A>
-                <Badge variant=BadgeVariant::Tint>"SPA"</Badge>
             </div>
             <div class="flex items-center gap-6">
                 <A href="/" attr:class="no-underline text-xs font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors duration-200">"Home"</A>
