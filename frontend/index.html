@@ -112,6 +112,52 @@
 
       .btn-row { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
 
+      .stack-section { width: 100%; }
+      .stack-heading {
+        font-size: 24px;
+        font-weight: 800;
+        margin: 0 0 20px 0;
+        text-align: center;
+        opacity: 0.4;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+      .stack-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 12px;
+        width: 100%;
+      }
+      @media (max-width: 640px) {
+        .stack-grid { grid-template-columns: 1fr; }
+      }
+      .stack-card {
+        display: block;
+        border: 1px solid var(--colorNeutralStroke2);
+        border-radius: 12px;
+        padding: 20px;
+        background: var(--colorNeutralBackground2);
+        text-decoration: none;
+        color: inherit;
+        transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+      }
+      .stack-card:hover {
+        border-color: var(--colorBrandStroke1);
+        box-shadow: 0 0 0 1px var(--colorBrandStroke1);
+        transform: translateY(-2px);
+      }
+      .stack-card h3 {
+        margin: 0 0 8px 0;
+        font-size: 15px;
+        font-weight: 700;
+      }
+      .stack-card p {
+        margin: 0;
+        font-size: 12px;
+        opacity: 0.5;
+        line-height: 1.5;
+      }
+
       .stack-table {
         width: 100%;
         border-collapse: collapse;

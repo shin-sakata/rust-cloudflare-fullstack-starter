@@ -135,6 +135,42 @@ fn Home() -> impl IntoView {
                     </div>
                 </div>
 
+                <div class="stack-section">
+                    <h2 class="stack-heading">"Powered by"</h2>
+                    <div class="stack-grid">
+                        <StackCard
+                            name="Leptos 0.8"
+                            desc="Reactive frontend framework compiling to WASM"
+                            href="https://book.leptos.dev/"
+                        />
+                        <StackCard
+                            name="Axum"
+                            desc="Ergonomic Rust web framework for the backend API"
+                            href="https://docs.rs/axum/latest/axum/"
+                        />
+                        <StackCard
+                            name="Thaw UI"
+                            desc="Component library with dark/light themes"
+                            href="https://thawui.vercel.app/"
+                        />
+                        <StackCard
+                            name="leptos-fetch"
+                            desc="TanStack Query-like caching & data fetching"
+                            href="https://github.com/zakstucke/leptos-fetch"
+                        />
+                        <StackCard
+                            name="leptos_router"
+                            desc="SPA routing with type-safe path! macro"
+                            href="https://docs.rs/leptos_router/latest/leptos_router/"
+                        />
+                        <StackCard
+                            name="Cloudflare Workers"
+                            desc="Edge runtime — deploy globally in seconds"
+                            href="https://developers.cloudflare.com/workers/"
+                        />
+                    </div>
+                </div>
+
                 <div class="btn-row">
                     <A href="https://book.leptos.dev/" attr:target="_blank" attr:style="text-decoration: none;">
                         <Button appearance=ButtonAppearance::Primary>"Leptos Docs"</Button>
@@ -148,6 +184,16 @@ fn Home() -> impl IntoView {
                 </div>
             </div>
         </div>
+    }
+}
+
+#[component]
+fn StackCard(name: &'static str, desc: &'static str, href: &'static str) -> impl IntoView {
+    view! {
+        <a class="stack-card" href=href target="_blank" rel="noopener">
+            <h3>{name}</h3>
+            <p>{desc}</p>
+        </a>
     }
 }
 
