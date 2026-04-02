@@ -1,0 +1,11 @@
+[package]
+name = "worker-api"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+worker = "0.7.5"
+console_error_panic_hook = "0.1.7"

@@ -5,7 +5,7 @@ async fn fetch(req: Request, env: Env, _ctx: Context) -> Result<Response> {
     console_error_panic_hook::set_once();
 
     Router::new()
-        .get("/", |_, _| Response::ok("Hello, World!"))
+        .get("/api/health", |_, _| Response::ok("ok"))
         .run(req, env)
         .await
 }

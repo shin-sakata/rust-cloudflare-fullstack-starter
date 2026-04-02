@@ -38,6 +38,8 @@
               rust-toolchain
               pkgs.wrangler
               pkgs.worker-build
+              pkgs.trunk
+              pkgs.process-compose
             ];
           };
         };
