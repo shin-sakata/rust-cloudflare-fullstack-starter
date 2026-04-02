@@ -5,10 +5,25 @@ fn main() {
     mount_to_body(App);
 }
 
+async fn fetch_health() -> String {
+    match gloo_net::http::Request::get("/api/health").send().await {
+        Ok(response) => response.text().await.unwrap_or_else(|e| format!("Error: {e}")),
+        Err(e) => format!("Error: {e}"),
+    }
+}
+
 #[component]
 fn App() -> impl IntoView {
+    let (health, set_health) = signal("loading...".to_string());
+
+    Effect::new(move |_| {
+        leptos::task::spawn_local(async move {
+            set_health.set(fetch_health().await);
+        });
+    });
+
     view! {
-        <h1>"Hello from Leptos!"</h1>
-        <p>"Rust + Cloudflare Workers SPA"</p>
+        <h1>"Rust Cloudflare Workers SPA"</h1>
+        <p>"API Health: " {health}</p>
     }
 }

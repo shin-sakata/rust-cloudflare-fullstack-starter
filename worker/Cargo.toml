@@ -7,5 +7,9 @@ edition = "2024"
 crate-type = ["cdylib"]
 
 [dependencies]
-worker = "0.7.5"
+worker = { version = "0.7.5", features = ["http"] }
+axum = { version = "0.8", default-features = false }
+tower-service = "0.3"
+http-body-util = "0.1"
+futures-util = "0.3"
 console_error_panic_hook = "0.1.7"

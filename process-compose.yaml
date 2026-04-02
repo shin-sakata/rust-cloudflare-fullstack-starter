@@ -1,6 +1,6 @@
 processes:
   frontend:
-    command: trunk watch --dist ../dist
+    command: trunk watch --dist dist
     working_dir: ./frontend
 
   worker:

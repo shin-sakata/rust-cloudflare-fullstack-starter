@@ -1,12 +1,15 @@
 {
   "name": "rust-cloudflare-example",
-  "main": "build/worker/shim.mjs",
+  "main": "worker/build/worker/shim.mjs",
   "compatibility_date": "2026-04-01",
   "build": {
-    "command": "worker-build --release worker"
+    "command": "worker-build --release worker",
+    "watch_dir": "./worker/src"
   },
   "assets": {
-    "directory": "./dist",
-    "not_found_handling": "single-page-application"
+    "directory": "./frontend/dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*"]
   }
 }
