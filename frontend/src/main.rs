@@ -1,4 +1,5 @@
 use leptos::prelude::*;
+use shared::HealthResponse;
 
 fn main() {
     console_error_panic_hook::set_once();
@@ -7,7 +8,10 @@ fn main() {
 
 async fn fetch_health() -> String {
     match gloo_net::http::Request::get("/api/health").send().await {
-        Ok(response) => response.text().await.unwrap_or_else(|e| format!("Error: {e}")),
+        Ok(response) => match response.json::<HealthResponse>().await {
+            Ok(health) => health.status,
+            Err(e) => format!("Error: {e}"),
+        },
         Err(e) => format!("Error: {e}"),
     }
 }

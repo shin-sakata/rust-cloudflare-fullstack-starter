@@ -1,10 +1,17 @@
-use axum::{routing::get, Router};
+use axum::{Json, routing::get, Router};
 use http_body_util::BodyExt;
+use shared::HealthResponse;
 use tower_service::Service;
 use worker::*;
 
 fn router() -> Router {
-    Router::new().route("/api/health", get(|| async { "ok" }))
+    Router::new().route("/api/health", get(health))
+}
+
+async fn health() -> Json<HealthResponse> {
+    Json(HealthResponse {
+        status: "ok".to_string(),
+    })
 }
 
 async fn into_worker_response(resp: axum::response::Response) -> Result<HttpResponse> {

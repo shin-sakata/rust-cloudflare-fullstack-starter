@@ -4,7 +4,7 @@
   "compatibility_date": "2026-04-01",
   "build": {
     "command": "worker-build --release worker",
-    "watch_dir": "./worker/src"
+    "watch_dir": ["./worker/src", "./shared/src"]
   },
   "assets": {
     "directory": "./frontend/dist",

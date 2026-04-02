@@ -7,8 +7,9 @@ edition = "2024"
 crate-type = ["cdylib"]
 
 [dependencies]
+shared = { path = "../shared" }
 worker = { version = "0.7.5", features = ["http"] }
-axum = { version = "0.8", default-features = false }
+axum = { version = "0.8", default-features = false, features = ["json"] }
 tower-service = "0.3"
 http-body-util = "0.1"
 futures-util = "0.3"
