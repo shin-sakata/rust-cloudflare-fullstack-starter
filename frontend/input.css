@@ -1,0 +1,87 @@
+@import "tailwindcss";
+@source "./src/**/*.rs";
+
+@theme {
+  --color-surface: oklch(0.16 0.01 260);
+  --color-surface-raised: oklch(0.20 0.01 260);
+  --color-surface-overlay: oklch(0.24 0.015 260);
+  --color-border-subtle: oklch(0.28 0.015 260);
+  --color-border-hover: oklch(0.50 0.12 270);
+  --color-text-primary: oklch(0.96 0.01 260);
+  --color-text-secondary: oklch(0.65 0.02 260);
+  --color-text-muted: oklch(0.50 0.02 260);
+  --color-accent-blue: oklch(0.65 0.20 260);
+  --color-accent-purple: oklch(0.60 0.22 300);
+  --color-accent-pink: oklch(0.65 0.22 340);
+  --color-accent-green: oklch(0.70 0.18 155);
+}
+
+@layer base {
+  html, body {
+    @apply m-0 p-0 w-full h-full;
+  }
+  body {
+    background: var(--color-surface);
+    color: var(--color-text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer components {
+  .glow-border {
+    border-color: var(--color-border-subtle);
+  }
+  .glow-border:hover {
+    border-color: var(--color-border-hover);
+    box-shadow: 0 0 20px -4px oklch(0.50 0.15 270 / 0.3);
+  }
+  .gradient-text {
+    background: linear-gradient(135deg, var(--color-accent-blue), var(--color-accent-purple), var(--color-accent-pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .gradient-border {
+    position: relative;
+  }
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, var(--color-accent-blue), var(--color-accent-purple), var(--color-accent-pink));
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+  }
+  .gradient-border:hover::before {
+    opacity: 1;
+  }
+  .dot-pulse {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-accent-green);
+    box-shadow: 0 0 8px var(--color-accent-green);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+  .hero-glow {
+    position: fixed;
+    top: -40%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 500px;
+    background: radial-gradient(ellipse, oklch(0.45 0.15 270 / 0.12) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+}
