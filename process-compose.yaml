@@ -2,6 +2,12 @@ processes:
   frontend:
     command: trunk watch --dist dist
     working_dir: ./frontend
+    readiness_probe:
+      exec:
+        command: "test -f dist/index.html"
 
   worker:
     command: wrangler dev
+    depends_on:
+      frontend:
+        condition: process_healthy
