@@ -8,7 +8,9 @@ crate-type = ["cdylib"]
 
 [dependencies]
 shared = { path = "../shared" }
-worker = { version = "0.7.5", features = ["http"] }
+worker = { version = "0.7.5", features = ["http", "tokio-postgres"] }
+tokio-postgres = { version = "0.7", default-features = false, features = ["js"] }
+wasm-bindgen-futures = "0.4"
 axum = { version = "0.8", default-features = false, features = ["json"] }
 tower-service = "0.3"
 http-body-util = "0.1"
