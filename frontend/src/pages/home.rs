@@ -16,7 +16,7 @@ pub fn Home() -> impl IntoView {
                 // Hero
                 <div class="flex flex-col items-center gap-4">
                     <h1 class="text-6xl max-sm:text-4xl font-black tracking-tighter leading-[1.05] m-0 gradient-text">
-                        "Rust Fullstack"<br />"on Cloudflare"
+                        "Rust Fullstack"<br />"on Cloudflare!"
                     </h1>
                     <p class="text-base max-w-md m-0 text-[var(--color-text-secondary)] leading-relaxed">
                         "Build full-stack apps with Leptos + Axum, compile everything to WebAssembly, and deploy to the edge."

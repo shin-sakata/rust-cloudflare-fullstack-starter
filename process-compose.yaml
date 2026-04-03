@@ -13,7 +13,7 @@ processes:
       max_restarts: 5
 
   worker:
-    command: wrangler dev
+    command: wrangler dev --live-reload
     depends_on:
       frontend:
         condition: process_healthy

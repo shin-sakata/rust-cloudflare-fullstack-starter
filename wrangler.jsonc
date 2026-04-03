@@ -4,7 +4,7 @@
   "main": "worker/build/index.js",
   "compatibility_date": "2026-04-01",
   "build": {
-    "command": "worker-build --release worker",
+    "command": "make worker",
     "watch_dir": ["./worker/src", "./shared/src", "./frontend/dist"]
   },
   "assets": {
