@@ -22,6 +22,13 @@ fn App() -> impl IntoView {
     let is_dark = RwSignal::new(true);
     QueryClient::new().provide();
 
+    Effect::new(move |_| {
+        let theme = if is_dark.get() { "dark" } else { "light" };
+        if let Some(el) = leptos::prelude::document().document_element() {
+            let _ = el.set_attribute("data-theme", theme);
+        }
+    });
+
     view! {
         <Router>
             <div class="min-h-screen flex flex-col relative">
