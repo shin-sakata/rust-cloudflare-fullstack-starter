@@ -19,7 +19,13 @@ fn main() {
 
 #[component]
 fn App() -> impl IntoView {
-    let is_dark = RwSignal::new(true);
+    let prefers_dark = leptos::prelude::window()
+        .match_media("(prefers-color-scheme: dark)")
+        .ok()
+        .flatten()
+        .map(|m: web_sys::MediaQueryList| m.matches())
+        .unwrap_or(true);
+    let is_dark = RwSignal::new(prefers_dark);
     QueryClient::new().provide();
 
     Effect::new(move |_| {

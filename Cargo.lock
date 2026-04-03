@@ -486,6 +486,7 @@ dependencies = [
  "leptos-fetch",
  "leptos_router",
  "shared",
+ "web-sys",
 ]
 
 [[package]]
