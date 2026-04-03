@@ -19,6 +19,14 @@ pub fn NavBar(is_dark: RwSignal<bool>) -> impl IntoView {
             <div class="flex items-center gap-6">
                 <A href="/" attr:class="no-underline text-xs font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors duration-200">"Home"</A>
                 <A href="/about" attr:class="no-underline text-xs font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors duration-200">"About"</A>
+                <a
+                    href="https://github.com/shin-sakata/rust-cloudflare-fullstack-starter"
+                    target="_blank"
+                    rel="noopener"
+                    class="no-underline text-xs font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors duration-200"
+                >
+                    "GitHub"
+                </a>
                 <Button variant=ButtonVariant::Ghost on_click=Box::new(toggle)>
                     {move || if is_dark.get() { "Light" } else { "Dark" }}
                 </Button>
