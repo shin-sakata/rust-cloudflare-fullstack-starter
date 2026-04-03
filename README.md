@@ -76,9 +76,9 @@ wrangler dev                              # Worker + asset serving
 trunk build --release                     # Frontend → frontend/dist/
 worker-build --release worker             # Worker → worker/build/
 
-# Check
-cargo check --workspace --target wasm32-unknown-unknown
-cargo clippy --workspace --target wasm32-unknown-unknown
+# Check (.cargo/config.toml sets the default target)
+cargo check --workspace
+cargo clippy --workspace
 ```
 
 ## How It Works

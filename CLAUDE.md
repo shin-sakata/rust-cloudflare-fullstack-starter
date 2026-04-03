@@ -23,9 +23,9 @@ wrangler dev                     # worker + アセット配信
 worker-build --release worker    # worker の WASM ビルド → worker/build/
 trunk build --release            # frontend の WASM ビルド → frontend/dist/
 
-# チェック・リント
-cargo check --workspace --target wasm32-unknown-unknown
-cargo clippy --workspace --target wasm32-unknown-unknown
+# チェック・リント（.cargo/config.toml でターゲット設定済み）
+cargo check --workspace
+cargo clippy --workspace
 ```
 
 ## アーキテクチャ
