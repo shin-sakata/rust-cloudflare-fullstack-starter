@@ -38,7 +38,7 @@ fn App() -> impl IntoView {
     view! {
         <Router>
             <div class="min-h-screen flex flex-col relative">
-                <div class="hero-glow"></div>
+                <div class="fixed pointer-events-none z-0 top-[-40%] left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[radial-gradient(ellipse,var(--color-glow)_0%,transparent_70%)] transition-[background] duration-300"></div>
                 <NavBar is_dark=is_dark />
                 <Routes fallback=|| view! { <NotFound /> }>
                     <Route path=path!("/") view=Home />

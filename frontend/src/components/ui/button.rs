@@ -17,9 +17,9 @@ pub fn Button(
 ) -> impl IntoView {
     let base = "inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 cursor-pointer no-underline";
     let variant_class = match variant {
-        ButtonVariant::Primary => "bg-gradient-to-r from-[var(--color-accent-blue)] to-[var(--color-accent-purple)] text-white hover:opacity-90 hover:shadow-lg hover:shadow-[var(--color-accent-purple)]/20 border-none",
-        ButtonVariant::Secondary => "border border-[var(--color-border-subtle)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-border-hover)] bg-transparent",
-        ButtonVariant::Ghost => "text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] bg-transparent border-none hover:bg-[var(--color-surface-overlay)]",
+        ButtonVariant::Primary => "bg-gradient-to-r from-accent-blue to-accent-purple text-white hover:opacity-90 hover:shadow-lg hover:shadow-accent-purple/20 border-none",
+        ButtonVariant::Secondary => "border border-border-subtle text-text-secondary hover:text-text-primary hover:border-border-hover bg-transparent",
+        ButtonVariant::Ghost => "text-text-muted hover:text-text-primary bg-transparent border-none hover:bg-surface-overlay",
     };
     let class = format!("{base} {variant_class}");
 

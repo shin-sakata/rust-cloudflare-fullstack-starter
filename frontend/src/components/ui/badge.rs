@@ -27,16 +27,16 @@ pub fn Badge(
     let base = "inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-medium tracking-wider uppercase";
     let style = match (variant, color) {
         (BadgeVariant::Filled, BadgeColor::Success) => {
-            "bg-[var(--color-accent-green)]/15 text-[var(--color-accent-green)]"
+            "bg-accent-green/15 text-accent-green"
         }
         (BadgeVariant::Tint, _) => {
-            "bg-[var(--color-accent-purple)]/15 text-[var(--color-accent-purple)]"
+            "bg-accent-purple/15 text-accent-purple"
         }
         (BadgeVariant::Outline, _) => {
-            "border border-[var(--color-border-subtle)] text-[var(--color-text-secondary)]"
+            "border border-border-subtle text-text-secondary"
         }
         (BadgeVariant::Filled, BadgeColor::Default) => {
-            "bg-[var(--color-accent-blue)]/15 text-[var(--color-accent-blue)]"
+            "bg-accent-blue/15 text-accent-blue"
         }
     };
 
