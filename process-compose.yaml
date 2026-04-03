@@ -1,7 +1,7 @@
 processes:
   frontend:
     command: trunk watch --dist dist
-    working_dir: ./frontend
+    working_dir: ./crates/frontend
     readiness_probe:
       exec:
         command: "test -f ./dist/index.html"

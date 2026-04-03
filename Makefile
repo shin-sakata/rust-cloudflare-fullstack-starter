@@ -1,6 +1,6 @@
 .PHONY: worker
 
-worker: worker/build/index.js
+worker: crates/worker/build/index.js
 
-worker/build/index.js: $(shell find worker/src shared/src -type f -name '*.rs')
+crates/worker/build/index.js: $(shell find crates/worker/src crates/shared/src crates/db/src -type f -name '*.rs')
 	worker-build --release worker

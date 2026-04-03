@@ -1,14 +1,14 @@
 {
   "name": "rust-cloudflare-fullstack-starter",
   "account_id": "e38fd6d9610cdbf2769a474ded929ff8",
-  "main": "worker/build/index.js",
+  "main": "crates/worker/build/index.js",
   "compatibility_date": "2026-04-01",
   "build": {
     "command": "make worker",
-    "watch_dir": ["./worker/src", "./shared/src", "./frontend/dist"]
+    "watch_dir": ["./crates/worker/src", "./crates/shared/src", "./crates/frontend/dist"]
   },
   "assets": {
-    "directory": "./frontend/dist",
+    "directory": "./crates/frontend/dist",
     "binding": "ASSETS",
     "not_found_handling": "single-page-application",
     "run_worker_first": ["/api/*"]

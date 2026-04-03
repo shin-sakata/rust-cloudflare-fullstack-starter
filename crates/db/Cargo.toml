@@ -1,0 +1,9 @@
+[package]
+name = "db"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+tokio-postgres = { version = "0.7", default-features = false, features = ["js"] }
+sea-query = { version = "0.32", default-features = false, features = ["backend-postgres"] }
+postgres-types = { version = "0.2", features = ["derive"] }
