@@ -1,5 +1,6 @@
 {
-  "name": "rust-cloudflare-example",
+  "name": "rust-cloudflare-fullstack-starter",
+  "account_id": "e38fd6d9610cdbf2769a474ded929ff8",
   "main": "worker/build/index.js",
   "compatibility_date": "2026-04-01",
   "build": {
