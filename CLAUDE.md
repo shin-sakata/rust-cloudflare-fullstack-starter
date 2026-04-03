@@ -15,10 +15,6 @@ nix develop
 # 全サービス一括起動（frontend watch + wrangler dev）
 process-compose up
 
-# 個別起動
-trunk watch --dist dist          # frontend（frontend/ ディレクトリで実行）
-wrangler dev                     # worker + アセット配信
-
 # ビルド
 worker-build --release worker    # worker の WASM ビルド → worker/build/
 trunk build --release            # frontend の WASM ビルド → frontend/dist/

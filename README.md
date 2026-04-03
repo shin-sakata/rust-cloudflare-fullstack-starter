@@ -68,10 +68,6 @@ Browser
 # Dev (all-in-one)
 process-compose up
 
-# Dev (individual)
-cd frontend && trunk watch --dist dist    # Frontend watch
-wrangler dev                              # Worker + asset serving
-
 # Build
 trunk build --release                     # Frontend → frontend/dist/
 worker-build --release worker             # Worker → worker/build/
