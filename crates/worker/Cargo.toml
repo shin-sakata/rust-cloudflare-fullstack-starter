@@ -8,7 +8,6 @@ crate-type = ["cdylib"]
 
 [dependencies]
 shared = { path = "../shared" }
-db = { path = "../db" }
 worker = { version = "0.7.5", features = ["http", "tokio-postgres"] }
 tokio-postgres = { version = "0.7", default-features = false, features = ["js"] }
 wasm-bindgen-futures = "0.4"
