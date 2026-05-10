@@ -19,8 +19,12 @@
       ];
 
       perSystem =
-        { pkgs, system, ... }:
+        { system, ... }:
         let
+          pkgs = import inputs.nixpkgs {
+            inherit system;
+            overlays = [ (import ./nix/overlays/worker-build.nix) ];
+          };
           rust-toolchain = inputs.fenix.packages.${system}.combine [
             (inputs.fenix.packages.${system}.stable.withComponents [
               "cargo"
